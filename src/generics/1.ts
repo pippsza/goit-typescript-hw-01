@@ -1,6 +1,6 @@
 import axios from "axios";
 
-async function fetchData(url: string): Promise<object> {
+async function fetchData<T extends string, U>(url: T): Promise<U> {
   try {
     const response = await axios.get(url);
     return response.data;
